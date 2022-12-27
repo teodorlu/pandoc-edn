@@ -1,4 +1,4 @@
-(ns teod.pandoc.alpha2)
+(ns teodorlu.pandoc.alpha2)
 
 ;; New design constraints:
 ;;

@@ -1,4 +1,4 @@
-(ns teod.pandoc.alpha1)
+(ns teodorlu.pandoc.alpha1)
 
 ;; Alpha 1 is in a different castle:
 ;;
