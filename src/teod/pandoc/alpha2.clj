@@ -15,3 +15,14 @@
 ;; - This repo should work out of the box with JVM Clojure and babashka
 ;; - Just use the REPL for now
 ;; - Don't bother testing for now
+
+(def !pandoc-runner (atom nil))
+
+(comment
+
+  (defn stuff [{:keys [pandoc-fn]}]
+    (let [pandoc-fn (or pandoc-fn @!pandoc-runner)]))
+
+  (stuff {:pandoc-fn (fn [,,] ,,)})
+
+  )
