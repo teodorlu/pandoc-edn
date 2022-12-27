@@ -16,7 +16,27 @@
 ;; - Just use the REPL for now
 ;; - Don't bother testing for now
 
-(def !pandoc-runner (atom nil))
+(def !runner
+  "Set this to a function from list of pandoc CLI args to stdout as string.
+
+  Example:
+
+    (reset! pandoc/!runner runner (fn [s args] ,,, \"result\"))
+
+  The runner represents a pandoc CLI call. This CLI call:
+
+    echo 'good morning!' | pandoc --from markdown --to json
+
+  Woulc be represented as->
+
+    (runner \"Good morning!\" [\"--from\" \"markdown\" \"--to\" \"html\"])
+    ;; => \"<p>good morning!</p>\"
+
+  \"What about error handling?\"
+
+  Not sure. I've decided to ignore errors for now and see if I can make a good
+  happy path."
+  (atom nil))
 
 (comment
 
