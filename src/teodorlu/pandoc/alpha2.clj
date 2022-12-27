@@ -25,7 +25,7 @@
 
   The runner represents a pandoc CLI call. This CLI call:
 
-    echo 'good morning!' | pandoc --from markdown --to json
+    echo 'good morning!' | pandoc --from markdown --to html
 
   Woulc be represented as->
 
