@@ -41,7 +41,7 @@
 (comment
 
   (defn stuff [{:keys [pandoc-fn]}]
-    (let [pandoc-fn (or pandoc-fn @!pandoc-runner)]))
+    (let [pandoc-fn (or pandoc-fn @!runner)]))
 
   (stuff {:pandoc-fn (fn [,,] ,,)})
 
