@@ -43,6 +43,9 @@
   (defn stuff [{:keys [pandoc-fn]}]
     (let [pandoc-fn (or pandoc-fn @!runner)]))
 
+  ;; is "runner" a nice name?
+  ;; is "pandoc-fn" a nice name?
+
   (stuff {:pandoc-fn (fn [,,] ,,)})
 
   )
