@@ -1,0 +1,6 @@
+#+title: =pandoc-edn=: an intermediate representation for rich text
+
+#+begin_src
+:warning: This project should be considered experimental and may undergo breaking changes.
+#+end_src
+
