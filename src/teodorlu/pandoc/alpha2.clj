@@ -16,20 +16,20 @@
 ;; - Just use the REPL for now
 ;; - Don't bother testing for now
 
-(def !runner
+(def !exec-fn
   "Set this to a function from list of pandoc CLI args to stdout as string.
 
   Example:
 
-    (reset! pandoc/!runner runner (fn [s args] ,,, \"result\"))
+    (reset! pandoc/!exec-fn exec-fn (fn [s args] ,,, \"result\"))
 
-  The runner represents a pandoc CLI call. This CLI call:
+  The exec-fn represents a pandoc CLI call. This CLI call:
 
     echo 'good morning!' | pandoc --from markdown --to html
 
   Woulc be represented as->
 
-    (runner \"Good morning!\" [\"--from\" \"markdown\" \"--to\" \"html\"])
+    (exec-fn \"Good morning!\" [\"--from\" \"markdown\" \"--to\" \"html\"])
     ;; => \"<p>good morning!</p>\"
 
   \"What about error handling?\"
@@ -40,12 +40,9 @@
 
 (comment
 
-  (defn stuff [{:keys [pandoc-fn]}]
-    (let [pandoc-fn (or pandoc-fn @!runner)]))
+  (defn stuff [opts]
+    (let [exec-fn (or (:exec-fn opts) @!exec-fn)]
+      ,,,))
 
-  ;; is "runner" a nice name?
-  ;; is "pandoc-fn" a nice name?
-
-  (stuff {:pandoc-fn (fn [,,] ,,)})
 
   )
